@@ -1,0 +1,33 @@
+{
+  "hi": "Hallo, Willkommen bei Home Challenger",
+  "haveANiceDay": "Einen schönen Tag noch",
+  "MyTask": "Meine Aufgabe",
+  "InProgress": "In Bearbeitung",
+  "home": "Zuhause",
+  "history": "Geschichte",
+  "InProgressTask": "In Bearbeitung Aufgabe",
+  "createTask": "Aufgabe erstellen",
+  "taskName": "Aufgabenname",
+  "taskDescription": "Aufgabenbeschreibung",
+  "lables": "Etiketten",
+  "add" : "Hinzufügen",
+  "completeTaskHistory": "Vollständige Aufgabenhistorie",
+   "editTask": "Aufgabe bearbeiten",
+  "updateTask": "Aufgabe aktualisieren",
+  "edit": "Bearbeiten",
+  "delete": "Löschen",
+  "markAsComplete": "Als abgeschlossen markieren",
+  "projectID": "Projekt-ID",
+  "selectLanguage": "Sprache auswählen",
+  "resent": "Resent",
+  "Automatic_based_on_system_language": "Automatisch basierend auf der Systemsprache",
+  "Choose_language": "Sprache wählen",
+  "comment": "Kommentar",
+  "start": "Start",
+  "pause": "Pause",
+  "addAComment": "Einen Kommentar hinzufügen",
+  "TimeSpentonTask" : "Zeit auf der Aufgabe verbracht"
+
+
+
+}

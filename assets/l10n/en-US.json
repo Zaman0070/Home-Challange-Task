@@ -1,0 +1,40 @@
+{
+  "hi": "Hi, Welcome to Home Challenger",
+  "haveANiceDay": "Have a nice day",
+  "MyTask": "My Task",
+  "InProgress": "In-Progress",
+  "home": "Home",
+  "history": "History",
+  "InProgressTask": "In-Progress Task",
+  "createTask": "Create Task",
+  "taskName": "Task Name",
+  "taskDescription": "Task Description",
+  "lables": "Lables",
+  "add" : "Add",
+  "completeTaskHistory": "Complete Task History",
+  "editTask": "Edit Task",
+  "updateTask": "Update Task",
+  "edit": "Edit",
+  "delete": "Delete",
+  "markAsComplete": "Mark as Complete",
+  "projectID": "Project ID",
+  "selectLanguage": "Select Language",
+  "resent": "Resent",
+  "Automatic_based_on_system_language": "Automatic based on system language",
+  "Choose_language": "Choose language",
+  "comment": "Comment",
+  "start": "Start",
+  "pause": "Pause",
+  "addAComment": "Add a Comment",
+  "TimeSpentonTask" : "Time Spent on Task"
+
+
+
+ 
+}
+
+
+
+
+
+
