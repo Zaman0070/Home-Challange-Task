@@ -12,8 +12,9 @@ import 'package:home_challenger_for_flutter/utils/thems/theme.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
-void main() {
-  LocalNotificationService.requestPermission(Permission.notification);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotificationService.requestPermission(Permission.notification);
   LocalNotificationService.initialize();
   tz.initializeTimeZones();
   runApp(EasyLocalization(

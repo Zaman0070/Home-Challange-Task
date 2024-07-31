@@ -139,7 +139,7 @@ class IHomeDataSource extends HomeDataSource {
   FutureEither<String> deleteTask({required String id}) async {
     try {
       await dioClient.delete(
-        '${Endpoints.baseUrl}/$id',
+        '${Endpoints.baseUrl}${Endpoints.taskEndPoint}/$id',
         options: Options(
           headers: header(authToken: 'Bearer ${Endpoints.apiToken}'),
         ),

@@ -165,6 +165,7 @@ class _CreateTaskScreenState extends ConsumerState<CreateTaskScreen> {
                 controller: taskDescriptionController,
                 hintText: LocaleKeys.taskDescription.tr(),
                 label: LocaleKeys.taskDescription.tr(),
+                maxLines: 4,
               ),
               padding24,
               CustomButton(

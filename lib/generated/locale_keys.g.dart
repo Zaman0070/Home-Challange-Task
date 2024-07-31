@@ -29,5 +29,7 @@ abstract class  LocaleKeys {
   static const pause = 'pause';
   static const addAComment = 'addAComment';
   static const TimeSpentonTask = 'TimeSpentonTask';
+  static const cancel = 'cancel';
+  static const AreYouSureWantToDeleteThisTask = 'AreYouSureWantToDeleteThisTask';
 
 }

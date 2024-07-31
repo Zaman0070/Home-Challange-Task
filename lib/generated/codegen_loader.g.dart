@@ -42,7 +42,9 @@ class CodegenLoader extends AssetLoader{
   "start": "Start",
   "pause": "Pause",
   "addAComment": "Einen Kommentar hinzufügen",
-  "TimeSpentonTask": "Zeit auf der Aufgabe verbracht"
+  "TimeSpentonTask": "Zeit auf der Aufgabe verbracht",
+  "cancel": "Stornieren",
+  "AreYouSureWantToDeleteThisTask": "Sind Sie sicher, dass Sie diese Aufgabe löschen möchten?"
 };
 static const Map<String,dynamic> fr_FR = {
   "hi": "Bonjour, bienvenue chez Home Challenger",
@@ -72,7 +74,9 @@ static const Map<String,dynamic> fr_FR = {
   "start": "Début",
   "pause": "Pause",
   "addAComment": "Ajouter un commentaire",
-  "TimeSpentonTask": "Temps passé sur la tâche"
+  "TimeSpentonTask": "Temps passé sur la tâche",
+  "cancel": "Annuler",
+  "AreYouSureWantToDeleteThisTask": "Êtes-vous sûr de vouloir supprimer cette tâche?"
 };
 static const Map<String,dynamic> en_US = {
   "hi": "Hi, Welcome to Home Challenger",
@@ -102,7 +106,9 @@ static const Map<String,dynamic> en_US = {
   "start": "Start",
   "pause": "Pause",
   "addAComment": "Add a Comment",
-  "TimeSpentonTask": "Time Spent on Task"
+  "TimeSpentonTask": "Time Spent on Task",
+  "cancel": "Cancel",
+  "AreYouSureWantToDeleteThisTask": "Are You Sure Want To Delete This Task?"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"de_DE": de_DE, "fr_FR": fr_FR, "en_US": en_US};
 }

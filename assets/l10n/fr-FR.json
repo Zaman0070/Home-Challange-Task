@@ -26,7 +26,9 @@
     "start": "Début",
     "pause": "Pause",
     "addAComment": "Ajouter un commentaire",
-    "TimeSpentonTask" : "Temps passé sur la tâche"
+    "TimeSpentonTask" : "Temps passé sur la tâche",
+    "cancel": "Annuler",
+    "AreYouSureWantToDeleteThisTask": "Êtes-vous sûr de vouloir supprimer cette tâche?"
   
   
   

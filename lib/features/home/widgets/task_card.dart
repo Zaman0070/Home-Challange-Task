@@ -102,13 +102,13 @@ class _TaskCardState extends ConsumerState<TaskCard> {
             style: getBoldStyle(
                 color: context.whiteColor, fontSize: MyFonts.size22),
           ),
-          padding6,
+          padding2,
           Text(widget.taskModel.description ?? '',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: getRegularStyle(
                   color: context.whiteColor, fontSize: MyFonts.size12)),
-          padding8,
+          padding4,
           Text(
             LocaleKeys.InProgress.tr(),
             style: getRegularStyle(

@@ -77,10 +77,11 @@ class _LanguageBottomSessionState extends ConsumerState<LanguageBottomSession> {
               Row(
                 children: [
                   SvgPicture.asset(
-                    ctr.selectedLanguage == 'English' ||
-                            ctr.selectedLanguage == "German"
-                        ? AppAssets.germanSvgIcon
-                        : AppAssets.frenchSvgIcon,
+                    ctr.selectedLanguage == 'English'
+                        ? AppAssets.englishSvgIcon
+                        : ctr.selectedLanguage == 'German'
+                            ? AppAssets.germanSvgIcon
+                            : AppAssets.frenchSvgIcon,
                     height: 40.h,
                     width: 40.w,
                   ),

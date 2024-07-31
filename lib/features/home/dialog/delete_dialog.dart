@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:home_challenger_for_flutter/common/common_functions/padding.dart';
@@ -5,6 +6,7 @@ import 'package:home_challenger_for_flutter/common/common_imports/common_libs.da
 import 'package:home_challenger_for_flutter/common/common_widgets/custom_button.dart';
 import 'package:home_challenger_for_flutter/core/extensions/color_extensions.dart';
 import 'package:home_challenger_for_flutter/features/home/controller/home_controller.dart';
+import 'package:home_challenger_for_flutter/generated/locale_keys.g.dart';
 import 'package:home_challenger_for_flutter/utils/constants/assets_manager.dart';
 import 'package:home_challenger_for_flutter/utils/constants/font_manager.dart';
 
@@ -58,11 +60,10 @@ class _SignUpScreenState extends ConsumerState<DeleteDialog> {
               ),
               padding12,
               Text(
-                'Are You Sure Want To Delete This Task?',
+                LocaleKeys.AreYouSureWantToDeleteThisTask.tr(),
                 textAlign: TextAlign.center,
                 style: getRegularStyle(
-                    color: context.secondaryContainerColor,
-                    fontSize: MyFonts.size15),
+                    color: MyColors.black, fontSize: MyFonts.size15),
               ),
               padding24,
               Row(
@@ -76,8 +77,8 @@ class _SignUpScreenState extends ConsumerState<DeleteDialog> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      textColor: context.secondaryContainerColor,
-                      buttonText: 'Cancel'),
+                      textColor: MyColors.black,
+                      buttonText: LocaleKeys.cancel.tr()),
                   CustomButton(
                       isLoading: ref.watch(homeControllerProvider),
                       backColor: context.primary,
@@ -85,7 +86,7 @@ class _SignUpScreenState extends ConsumerState<DeleteDialog> {
                       buttonWidth: 135.w,
                       onPressed: delete,
                       textColor: MyColors.white,
-                      buttonText: 'Delete'),
+                      buttonText: LocaleKeys.delete.tr()),
                 ],
               ),
             ],
