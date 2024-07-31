@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_challenger_for_flutter/common/common_provider/theme_provider.dart';
-import 'package:home_challenger_for_flutter/features/main_menu/views/main_menu_screen.dart';
 import 'package:home_challenger_for_flutter/features/splash/view/splash_screen.dart';
 import 'package:home_challenger_for_flutter/generated/codegen_loader.g.dart';
 import 'package:home_challenger_for_flutter/routes/route_manager.dart';
@@ -68,7 +67,7 @@ class MyApp extends ConsumerWidget {
 
           // darkTheme: darkThemeData(context),
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          home: const MainMenuScreen(),
+          home: const SplashScreen(),
         );
       },
     );
