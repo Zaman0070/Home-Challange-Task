@@ -12,7 +12,8 @@ class AppAssets {
   static const String backArrowIcon = '$iconPath/backArrow.png';
   static const String errorIcon = '$iconPath/error.png';
   static const String noDataIcon = '$iconPath/noData.png';
-   
+  static const String calenderLightIcon = '$iconPath/circle-l.png';
+  static const String calenderDarkIcon = '$iconPath/circle-d.png';
 
   // SVG Icons
   static const String homeSvgIcon = '$svgIconPath/home.svg';
@@ -25,6 +26,7 @@ class AppAssets {
   static const String editSvgIcon = '$svgIconPath/edit.svg';
   static const String deleteSvgIcon = '$svgIconPath/delete.svg';
   static const String calenderSvgIcon = '$svgIconPath/calender.svg';
+  static const String calender1SvgIcon = '$svgIconPath/calendar1.svg';
   static const String lightModeSvgIcon = '$svgIconPath/light-mode.svg';
   static const String darkModeSvgIcon = '$svgIconPath/dark-mode.svg';
   static const String checkSvgIcon = '$svgIconPath/check.svg';
@@ -33,9 +35,6 @@ class AppAssets {
   static const String frenchSvgIcon = '$svgIconPath/french.svg';
   static const String germanSvgIcon = '$svgIconPath/german.svg';
   static const String languageSvgIcon = '$svgIconPath/language.svg';
-  
-
-
 
   //  Images
 

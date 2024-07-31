@@ -31,5 +31,6 @@ abstract class  LocaleKeys {
   static const TimeSpentonTask = 'TimeSpentonTask';
   static const cancel = 'cancel';
   static const AreYouSureWantToDeleteThisTask = 'AreYouSureWantToDeleteThisTask';
+  static const Calendar = 'Calendar';
 
 }

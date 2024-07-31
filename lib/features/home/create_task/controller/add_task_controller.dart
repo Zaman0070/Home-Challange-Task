@@ -17,7 +17,7 @@ class AddTaskController extends StateNotifier<bool> {
   AddTaskController(this._addTaskDataSource) : super(false);
 
   Future<void> createTask(
-      {required TaskModel formData, required BuildContext context}) async {
+      {required Map<String, Object> formData, required BuildContext context}) async {
     state = true;
     final result = await _addTaskDataSource.createTask(formData: formData);
     result.fold((l) {

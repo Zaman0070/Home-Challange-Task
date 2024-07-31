@@ -6,8 +6,7 @@ class AppConstants {
   static double padding = 20.h;
   static int expiryMinutes = 43200; // minutes in 30 days.
   static int expiryMinutesForReminder = 36000; // minutes in 25 days.
-  // static int expiryMinutes = 30;
-  static String currency = 'BWP';
+
 }
 
 const String profileDummyImage =

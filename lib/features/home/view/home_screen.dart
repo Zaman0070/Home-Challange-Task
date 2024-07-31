@@ -53,7 +53,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final List<String> _tabs = [
+    final List<String> tabs = [
       LocaleKeys.MyTask.tr(),
       LocaleKeys.InProgress.tr(),
     ];
@@ -94,7 +94,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
             overlayColor: MaterialStateProperty.all(MyColors.transparentColor),
             onTap: () {
               ref.watch(themeMenuProvider.notifier).changeThemeMode();
-
               setState(() {});
             },
             child: Padding(
@@ -114,17 +113,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: SvgPicture.asset(
-              AppAssets.profileSvgIcon,
-              height: 20.h,
-              width: 20.w,
-              colorFilter: ColorFilter.mode(
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.calendarViewScreen);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Image.asset(
                 Theme.of(context).brightness == Brightness.light
-                    ? Colors.black
-                    : Colors.white,
-                BlendMode.srcIn,
+                    ? AppAssets.calenderLightIcon
+                    : AppAssets.calenderDarkIcon,
+                height: 20.h,
+                width: 20.w,
               ),
             ),
           ),
@@ -145,7 +145,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
         ),
       ),
       body: DefaultTabController(
-        length: _tabs.length,
+        length: tabs.length,
         child: Padding(
           padding: EdgeInsets.all(AppConstants.padding),
           child: Column(
@@ -195,7 +195,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                         dividerColor: MyColors.transparentColor,
                         labelColor: context.whiteColor,
                         labelStyle: getMediumStyle(color: context.whiteColor),
-                        tabs: _tabs.map((tab) => Tab(text: tab)).toList(),
+                        tabs: tabs.map((tab) => Tab(text: tab)).toList(),
                       ),
                     )
                   : Container(),
@@ -204,7 +204,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                       height: 185.h,
                       child: Consumer(builder: (context, ref, child) {
                         final allTaskProvider = ref.watch(
-                            watchAllTaskProvider(_tabs[_tabController.index]));
+                            watchAllTaskProvider(tabs[_tabController.index]));
                         return allTaskProvider.when(
                           data: (data) {
                             return ListView.builder(
@@ -261,7 +261,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                   : Expanded(
                       child: Consumer(builder: (context, ref, child) {
                         final allTaskProvider = ref.watch(
-                            watchAllTaskProvider(_tabs[_tabController.index]));
+                            watchAllTaskProvider(tabs[_tabController.index]));
                         return allTaskProvider.when(
                           data: (data) {
                             return GridView.builder(

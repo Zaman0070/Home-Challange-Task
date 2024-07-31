@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:home_challenger_for_flutter/common/common_functions/padding.dart';
 import 'package:home_challenger_for_flutter/common/common_imports/apis_commons.dart';
 import 'package:home_challenger_for_flutter/common/common_imports/common_libs.dart';
@@ -8,7 +9,6 @@ import 'package:home_challenger_for_flutter/common/common_widgets/custom_text_fi
 import 'package:home_challenger_for_flutter/core/extensions/color_extensions.dart';
 import 'package:home_challenger_for_flutter/features/home/create_task/controller/add_task_controller.dart';
 import 'package:home_challenger_for_flutter/generated/locale_keys.g.dart';
-import 'package:home_challenger_for_flutter/models/task_model.dart';
 import 'package:home_challenger_for_flutter/utils/constants/app_constants.dart';
 import 'package:home_challenger_for_flutter/utils/constants/assets_manager.dart';
 import 'package:home_challenger_for_flutter/utils/constants/font_manager.dart';
@@ -37,7 +37,7 @@ class _CreateTaskScreenState extends ConsumerState<CreateTaskScreen> {
   var taskDescriptionController = TextEditingController();
   var dueController = TextEditingController();
   var labelsController = TextEditingController();
-  DateTime dob = DateTime.now();
+  DateTime due = DateTime.now();
   DateTime now = DateTime.now();
   List<String> labels = [];
   Future<void> _selectDate(BuildContext context) async {
@@ -45,10 +45,10 @@ class _CreateTaskScreenState extends ConsumerState<CreateTaskScreen> {
         context: context,
         initialDate: now,
         firstDate: DateTime(1970, 8),
-        lastDate: DateTime.now());
+        lastDate: DateTime.now().add(const Duration(days: 365)));
     if (picked != null && picked != now) {
       setState(() {
-        dob = picked;
+        due = picked;
         dueController.text = DateFormat('EE-MM-dd').format(picked);
       });
     }
@@ -97,19 +97,25 @@ class _CreateTaskScreenState extends ConsumerState<CreateTaskScreen> {
                   return null;
                 },
               ),
-              // CustomTextField(
-              //   label: 'Due Date',
-              //   onTap: () {
-              //     _selectDate(context);
-              //   },
-              //   enabled: false,
-              //   controller: dueController,
-              //   hintText: 'Select Due Date',
-              //   leadingIcon: Padding(
-              //     padding: const EdgeInsets.all(14.0),
-              //     child: SvgPicture.asset(AppAssets.calenderSvgIcon),
-              //   ),
-              // ),
+              CustomTextField(
+                label: 'Due Date',
+                onTap: () {
+                  _selectDate(context);
+                },
+                enabled: false,
+                controller: dueController,
+                hintText: 'Select Due Date',
+                validatorFn: (val) {
+                  if (val!.isEmpty) {
+                    return 'Due Date is required';
+                  }
+                  return null;
+                },
+                leadingIcon: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: SvgPicture.asset(AppAssets.calenderSvgIcon),
+                ),
+              ),
               CustomTextField(
                 controller: labelsController,
                 hintText: LocaleKeys.lables.tr(),
@@ -189,14 +195,16 @@ class _CreateTaskScreenState extends ConsumerState<CreateTaskScreen> {
 
   createTask() async {
     if (_formKey.currentState!.validate()) {
-      TaskModel taskModel = TaskModel(
-        content: taskNameController.text,
-        description: taskDescriptionController.text,
-        labels: labels,
-      );
+      var data = {
+        'content': taskNameController.text,
+        'description': taskDescriptionController.text,
+        'labels': labels,
+        "due_string": due.toIso8601String(),
+        "due_lang": "en"
+      };
       await ref
           .read(addTaskControllerProvider.notifier)
-          .createTask(formData: taskModel, context: context);
+          .createTask(formData: data, context: context);
     }
   }
 }

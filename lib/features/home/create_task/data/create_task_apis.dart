@@ -17,7 +17,7 @@ final createTaskDataSourceProvider = Provider<CreateTaskDataSource>((ref) {
 });
 
 abstract class CreateTaskDataSource {
-  FutureEither createTask({required TaskModel formData});
+  FutureEither createTask({required Map<String, Object> formData});
   FutureEither updateTask({required TaskModel formData});
   FutureEither markAsClose({required String id});
 }
@@ -27,11 +27,29 @@ class ICreateTaskDataSource extends CreateTaskDataSource {
   ICreateTaskDataSource({required this.dioClient});
 
   @override
-  FutureEither createTask({required TaskModel formData}) async {
+  FutureEither createTask({
+    required Map<String, Object> formData,
+  }) async {
     try {
+      
+
+      // TaskModel taskModel = TaskModel.fromMap(data);
+      // TaskModel(
+      //     content: 'taskNameController.text',
+      //     description: ' taskDescriptionController.text',
+      //     labels: [
+      //       'labels'
+      //     ],
+      //     due: {
+      //       'date': DateFormat('yyyy-MM-dd').format(DateTime.now()),
+      //       'timezone': 'Asia/Kolkata',
+      //       "is_recurring": false,
+      //       "datetime": DateTime.now().toIso8601String(),
+      //       "string": "today"
+      //     });
       final response = await dioClient.post(
         Endpoints.baseUrl + Endpoints.taskEndPoint,
-        data: formData.toJson(),
+        data: formData,
         options: Options(
           headers: header(authToken: 'Bearer ${Endpoints.apiToken}'),
         ),

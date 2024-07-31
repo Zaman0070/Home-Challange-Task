@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_challenger_for_flutter/features/home/create_task/view/create_task_screen.dart';
 import 'package:home_challenger_for_flutter/features/home/create_task/view/edit_task_screen.dart';
+import 'package:home_challenger_for_flutter/features/home/view/calendar_view_screen.dart';
 import 'package:home_challenger_for_flutter/features/home/view/task_details_screen.dart';
 import 'package:home_challenger_for_flutter/features/main_menu/views/main_menu_screen.dart';
 import 'package:home_challenger_for_flutter/features/splash/view/splash_screen.dart';
@@ -17,6 +18,7 @@ class AppRoutes {
   static const String createTaskScreen = '/createTaskScreen';
   static const String editTaskScreen = '/editTaskScreen';
   static const String detailTaskScreen = '/detailTaskScreen';
+  static const String calendarViewScreen = '/calendarViewScreen';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -40,6 +42,8 @@ class AppRoutes {
         return _buildRoute(TaskDetailScreen(
           model: args['model'],
         ));
+      case calendarViewScreen:
+        return _buildRoute(const CalendarViewScreen());
 
       default:
         return unDefinedRoute();
